@@ -1,149 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Tic Tac Toe</title>
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        background: #f4f4f4;
-    }
-
-    .game {
-        text-align: center;
-    }
-
-    h1 {
-        margin-bottom: 10px;
-    }
-
-    .board {
-        display: grid;
-        grid-template-columns: repeat(3, 100px);
-        grid-gap: 5px;
-        margin: 20px auto;
-    }
-
-    .cell {
-        width: 100px;
-        height: 100px;
-        background: white;
-        font-size: 2.5rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
-        border: 2px solid #333;
-    }
-
-    .cell:hover {
-        background: #eaeaea;
-    }
-
-    .status {
-        font-size: 1.2rem;
-        margin-bottom: 10px;
-    }
-
-    button {
-        padding: 8px 16px;
-        font-size: 1rem;
-        cursor: pointer;
-    }
-</style>
+  <meta charset="UTF-8">
+  <title>Hy Cutie</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <h1>Hy cutie 💖</h1>
 
-<div class="game">
-    <h1>Tic Tac Toe</h1>
-    <div class="status" id="status">Player X's turn</div>
+  <div class="center-box">
+    <img src="feel.gif" alt="cute gif" class="main-gif">
+  </div>
 
-    <div class="board" id="board">
-        <div class="cell"></div>
-        <div class="cell"></div>
-        <div class="cell"></div>
-        <div class="cell"></div>
-        <div class="cell"></div>
-        <div class="cell"></div>
-        <div class="cell"></div>
-        <div class="cell"></div>
-        <div class="cell"></div>
-    </div>
+  <h2>How was your day? 🥰</h2>
 
-    <button onclick="resetGame()">Restart Game</button>
-</div>
-
-<script>
-    const cells = document.querySelectorAll(".cell");
-    const statusText = document.getElementById("status");
-
-    let currentPlayer = "X";
-    let gameActive = true;
-
-    const winConditions = [
-        [0,1,2],
-        [3,4,5],
-        [6,7,8],
-        [0,3,6],
-        [1,4,7],
-        [2,5,8],
-        [0,4,8],
-        [2,4,6]
-    ];
-
-    cells.forEach((cell, index) => {
-        cell.addEventListener("click", () => handleClick(cell, index));
-    });
-
-    function handleClick(cell, index) {
-        if (cell.textContent !== "" || !gameActive) return;
-
-        cell.textContent = currentPlayer;
-        checkResult();
-    }
-
-    function checkResult() {
-        let roundWon = false;
-
-        for (let condition of winConditions) {
-            const [a, b, c] = condition;
-            if (
-                cells[a].textContent &&
-                cells[a].textContent === cells[b].textContent &&
-                cells[a].textContent === cells[c].textContent
-            ) {
-                roundWon = true;
-                break;
-            }
-        }
-
-        if (roundWon) {
-            statusText.textContent = `Player ${currentPlayer} wins!`;
-            gameActive = false;
-            return;
-        }
-
-        if ([...cells].every(cell => cell.textContent !== "")) {
-            statusText.textContent = "It's a draw!";
-            gameActive = false;
-            return;
-        }
-
-        currentPlayer = currentPlayer === "X" ? "O" : "X";
-        statusText.textContent = `Player ${currentPlayer}'s turn`;
-    }
-
-    function resetGame() {
-        currentPlayer = "X";
-        gameActive = true;
-        statusText.textContent = "Player X's turn";
-        cells.forEach(cell => cell.textContent = "");
-    }
-</script>
-
+  <div class="btn-group">
+    <a href="good.html" class="btn">Good 😊</a>
+    <a href="bad.html" class="btn btn-secondary">Bad... 😞</a>
+  </div>
 </body>
 </html>
