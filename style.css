@@ -1,0 +1,146 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  -webkit-tap-highlight-color:transparent;
+}
+
+:root{
+  --bg:#fde4ec;        /* soft blush pink */
+  --card:#ffffff;
+  --accent:#e75480;    /* rose pink */
+  --accent2:#ff9dbb;   /* light pink */
+  --text:#3a1c2a;
+  --soft:#7a4b5e;
+}
+
+body{
+  min-height:100vh;
+  background:linear-gradient(180deg,#ffeaf1,var(--bg));
+  font-family:Poppins,Segoe UI,sans-serif;
+  color:var(--text);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:22px;
+}
+
+/* HEADINGS */
+h1{
+  font-size:2.6rem;
+  color:var(--accent);
+  margin-bottom:20px;
+  line-height:1.25;
+}
+
+h2{
+  font-size:1.6rem;
+  color:var(--soft);
+  margin:16px 0 24px;
+}
+
+/* IMAGE */
+.center-box{margin:22px 0;}
+
+.main-gif{
+  width:100%;
+  max-width:260px;
+  border-radius:20px;
+  box-shadow:0 14px 35px rgba(231,84,128,.25);
+}
+
+/* CONTENT */
+.content-box{
+  width:100%;
+  max-width:620px;
+  margin:18px 0;
+}
+
+.text-box{
+  background:var(--card);
+  padding:26px;
+  border-radius:26px;
+  box-shadow:0 14px 40px rgba(231,84,128,.18);
+}
+
+.text-box p{
+  font-size:1.15rem;
+  line-height:1.8;
+  color:var(--soft);
+}
+
+/* BUTTONS */
+.btn-group{
+  display:flex;
+  gap:18px;
+  margin-top:30px;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+
+.btn{
+  text-decoration:none;
+  padding:16px 34px;
+  border-radius:999px;
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  color:#ffffff;
+  font-size:1.15rem;
+  font-weight:600;
+  box-shadow:0 12px 30px rgba(231,84,128,.35);
+  transition:.3s;
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+}
+
+.btn-secondary{
+  background:transparent;
+  color:var(--accent);
+  border:2px solid var(--accent);
+}
+
+/* MOBILE FIX */
+@media(max-width:768px){
+
+  h1{font-size:2.2rem;}
+  h2{font-size:1.45rem;}
+
+  .text-box p{
+    font-size:1.1rem;
+  }
+
+  .btn-group{
+    flex-direction:column;
+  }
+
+  .btn{
+    width:100%;
+    max-width:340px;
+    font-size:1.2rem;
+    padding:18px;
+  }
+}
+
+/* SMALL PHONES */
+@media(max-width:420px){
+
+  h1{font-size:2rem;}
+  h2{font-size:1.35rem;}
+}
+.music-box{
+  margin:20px 0;
+}
+
+.music-text{
+  margin-bottom:8px;
+  color:var(--soft);
+  font-size:1rem;
+}
+
+audio{
+  width:260px;
+  max-width:100%;
+}
